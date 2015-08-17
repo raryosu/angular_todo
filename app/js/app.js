@@ -5,7 +5,8 @@ angular.module('TodoApp', [])
 
 		// todo作成
 		self.create = function() {
-			self.todos.push(self.newTodo);
+			self.todos.push({title: self.newTodo, done: false});
 			self.newTodo = '';
 		};
 	});
+
