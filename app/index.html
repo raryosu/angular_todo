@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!--
+	参考: http://engineer.recruit-lifestyle.co.jp/techblog/2015-06-22-angular1/
+-->
 <html>
 	<head>
 		<title>Todo</title>
@@ -16,7 +19,8 @@
 			<div ng-controller="TodoAppController as ac">
 				<form ng-submit="ac.create()" class="form-inline">
 					<input type="text" ng-model="ac.newTodo" placeholder="Todoを入力" class="form-control">
-					<input type="submit" type="button" class="btn btn-primary" value="新規作成">
+					<input type="submit" class="btn btn-primary" value="新規作成">
+					<input type="button" ng-click="ac.archive()" class="btn btn-danger" value="完了したTodoをアーカイブ">
 				</form>
 				<ul ng-repeat="todo in ac.todos">
 					<li>
